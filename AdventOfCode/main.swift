@@ -7,7 +7,7 @@
 
 import Foundation
 
-let day1 = Day1()
-day1.run()
+let day = Day2()
+day.run()
 
 

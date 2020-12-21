@@ -11,6 +11,7 @@
 		893EF7AF259113CA00304064 /* Day1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893EF7A9259113CA00304064 /* Day1.swift */; };
 		893EF7B0259113CA00304064 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893EF7AA259113CA00304064 /* Day.swift */; };
 		893EF7B1259113CA00304064 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893EF7AC259113CA00304064 /* Utils.swift */; };
+		893EF7B72591176200304064 /* Day2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893EF7B62591176200304064 /* Day2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,7 +32,9 @@
 		893EF7A9259113CA00304064 /* Day1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day1.swift; sourceTree = "<group>"; };
 		893EF7AA259113CA00304064 /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		893EF7AC259113CA00304064 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		893EF7AE259113CA00304064 /* data.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = data.txt; sourceTree = "<group>"; };
+		893EF7AE259113CA00304064 /* day1_input.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = day1_input.txt; sourceTree = "<group>"; };
+		893EF7B52591169E00304064 /* day2_input.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = day2_input.txt; sourceTree = "<group>"; };
+		893EF7B62591176200304064 /* Day2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +80,7 @@
 			children = (
 				893EF7AA259113CA00304064 /* Day.swift */,
 				893EF7A9259113CA00304064 /* Day1.swift */,
+				893EF7B62591176200304064 /* Day2.swift */,
 			);
 			path = Days;
 			sourceTree = "<group>";
@@ -92,7 +96,8 @@
 		893EF7AD259113CA00304064 /* Ressources */ = {
 			isa = PBXGroup;
 			children = (
-				893EF7AE259113CA00304064 /* data.txt */,
+				893EF7AE259113CA00304064 /* day1_input.txt */,
+				893EF7B52591169E00304064 /* day2_input.txt */,
 			);
 			path = Ressources;
 			sourceTree = "<group>";
@@ -155,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				893EF7AF259113CA00304064 /* Day1.swift in Sources */,
+				893EF7B72591176200304064 /* Day2.swift in Sources */,
 				893EF7A1259113C100304064 /* main.swift in Sources */,
 				893EF7B0259113CA00304064 /* Day.swift in Sources */,
 				893EF7B1259113CA00304064 /* Utils.swift in Sources */,
