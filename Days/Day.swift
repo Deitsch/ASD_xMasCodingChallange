@@ -7,6 +7,9 @@
 
 import Foundation
 
+let basePath = "/Users/simondeutsch/Documents/Campus/ASD/ASD_xMasCodingChallenge/"
+
 protocol Day {
+    
     func run()
 }

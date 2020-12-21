@@ -8,8 +8,9 @@
 import Foundation
 
 class Day1: Day {
+    
     func run() {
-        let data = FileReader.getStringArray(from: "/Users/simondeutsch/Documents/Campus/ASD/ASD_xMasCodingChallenge/Ressources/data.txt").toIntArray()
+        let data = FileReader.getStringArray(from: basePath + "Ressources/data.txt").toIntArray()
         print(find2020by3(data: data) ?? "fail")
     }
     
