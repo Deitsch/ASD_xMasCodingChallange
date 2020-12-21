@@ -44,7 +44,7 @@ class Day2: Day {
         
         let password = String(split2[2])
         
-        return company.rule(password: password, ruleChar: ruleChar, min: min, max: max)
+        return company.evaluate(password: password, ruleChar: ruleChar, min: min, max: max)
     }
 }
 
@@ -55,7 +55,7 @@ enum Company {
 
 extension Company {
     
-    func rule(password: String, ruleChar: Character, min: Int, max: Int) -> Bool {
+    func evaluate(password: String, ruleChar: Character, min: Int, max: Int) -> Bool {
         switch self {
         case .TobogganCorporate:
             return TobogganCorporateRule(password: password, ruleChar: ruleChar, min: min, max: max)
