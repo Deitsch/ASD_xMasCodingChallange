@@ -9,7 +9,7 @@ import Foundation
 
 class Day2: Day {
     func run() {
-        let data = FileReader.getStringArray(from: basePath + "Ressources/day2_input.txt")
+        let data = FileReader.getStringArray(from: basePath + "Resources/day2_input.txt")
         
         var correctPWs = 0
         data.forEach { line in

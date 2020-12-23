@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		89205EEA25922C2C0073A0B0 /* day4_input.txt in Sources */ = {isa = PBXBuildFile; fileRef = 89205EE925922C2C0073A0B0 /* day4_input.txt */; };
+		89205EEE25922C440073A0B0 /* Day4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89205EED25922C440073A0B0 /* Day4.swift */; };
 		893EF7A1259113C100304064 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893EF7A0259113C100304064 /* main.swift */; };
 		893EF7AF259113CA00304064 /* Day1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893EF7A9259113CA00304064 /* Day1.swift */; };
 		893EF7B0259113CA00304064 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893EF7AA259113CA00304064 /* Day.swift */; };
@@ -29,6 +31,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		89205EE925922C2C0073A0B0 /* day4_input.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = day4_input.txt; sourceTree = "<group>"; };
+		89205EED25922C440073A0B0 /* Day4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day4.swift; sourceTree = "<group>"; };
 		893EF79D259113C100304064 /* AdventOfCode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AdventOfCode; sourceTree = BUILT_PRODUCTS_DIR; };
 		893EF7A0259113C100304064 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		893EF7A9259113CA00304064 /* Day1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day1.swift; sourceTree = "<group>"; };
@@ -57,7 +61,7 @@
 			children = (
 				893EF7A8259113CA00304064 /* Days */,
 				893EF7AB259113CA00304064 /* Helper */,
-				893EF7AD259113CA00304064 /* Ressources */,
+				893EF7AD259113CA00304064 /* Resources */,
 				893EF79F259113C100304064 /* AdventOfCode */,
 				893EF79E259113C100304064 /* Products */,
 			);
@@ -86,6 +90,7 @@
 				893EF7A9259113CA00304064 /* Day1.swift */,
 				893EF7B62591176200304064 /* Day2.swift */,
 				893EF7BD25912BED00304064 /* Day3.swift */,
+				89205EED25922C440073A0B0 /* Day4.swift */,
 			);
 			path = Days;
 			sourceTree = "<group>";
@@ -98,14 +103,15 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
-		893EF7AD259113CA00304064 /* Ressources */ = {
+		893EF7AD259113CA00304064 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				893EF7AE259113CA00304064 /* day1_input.txt */,
 				893EF7B52591169E00304064 /* day2_input.txt */,
 				893EF7BA25912B6D00304064 /* day3_input.txt */,
+				89205EE925922C2C0073A0B0 /* day4_input.txt */,
 			);
-			path = Ressources;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,9 +174,11 @@
 				893EF7BE25912BED00304064 /* Day3.swift in Sources */,
 				893EF7AF259113CA00304064 /* Day1.swift in Sources */,
 				893EF7BB25912B6D00304064 /* day3_input.txt in Sources */,
+				89205EEA25922C2C0073A0B0 /* day4_input.txt in Sources */,
 				893EF7B72591176200304064 /* Day2.swift in Sources */,
 				893EF7A1259113C100304064 /* main.swift in Sources */,
 				893EF7B0259113CA00304064 /* Day.swift in Sources */,
+				89205EEE25922C440073A0B0 /* Day4.swift in Sources */,
 				893EF7B1259113CA00304064 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
