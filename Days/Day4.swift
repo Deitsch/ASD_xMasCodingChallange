@@ -19,11 +19,61 @@ class Day4: Day {
         rawPassportData.forEach { line in
             let passport = rawPassportDataToPassport(line: line)
             
-            if passport.count == 8 || (passport.count == 7 && passport["cid"] == nil) {
+            if (passport.count == 8 || (passport.count == 7 && passport["cid"] == nil))
+                && additionalCheck(passport: passport) {
                 validPassports+=1
             }
         }
+        print("c", c1 - c2)
         print(validPassports)
+    }
+    
+    var c1 = 0
+    var c2 = 0
+    
+    func additionalCheck(passport: Passport) -> Bool {
+        guard let byr = Int(passport["byr"]!), byr >= 1920 && byr <= 2002 else {
+            return false
+        }
+        guard let iyr = Int(passport["iyr"]!), iyr >= 2010 && iyr <= 2020 else {
+            return false
+        }
+        guard let eyr = Int(passport["eyr"]!), eyr >= 2020 && eyr <= 2030 else {
+            return false
+        }
+        guard let hgt = passport["hgt"], hgt.hasSuffix("cm") || hgt.hasSuffix("in") else {
+            return false
+        }
+        
+        if hgt.hasSuffix("cm") {
+            guard let cmHeight = Int(hgt.replacingOccurrences(of: "cm", with: "")), cmHeight >= 150 && cmHeight <= 193 else {
+                return false
+            }
+        }
+        else {
+            guard let cmHeight = Int(hgt.replacingOccurrences(of: "in", with: "")), cmHeight >= 59 && cmHeight <= 76 else {
+                return false
+            }
+        }
+        
+        let regexHcl = try! NSRegularExpression(pattern: "^#[0-9a-f]{6}$")
+        guard let hcl = passport["hcl"],
+              regexHcl.firstMatch(in: hcl, options: [], range: NSRange(location: 0, length: hcl.count)) != nil else {
+            return false
+        }
+        
+        let validEyeColors = ["amb", "blu", "brn", "gry", "grn", "hzl", "oth"]
+        guard let ecl = passport["ecl"], validEyeColors.contains(ecl) else {
+            return false
+        }
+        
+        let regexPid = try! NSRegularExpression(pattern: "^[0-9]{9}$")
+        guard let pid = passport["pid"],
+              regexPid.firstMatch(in: pid, options: [], range: NSRange(location: 0, length: pid.count)) != nil else {
+            return false
+        }
+        
+        return true
     }
     
     // prepare data for each passport to be in one string in the array
