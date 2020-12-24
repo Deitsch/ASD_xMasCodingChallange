@@ -10,7 +10,7 @@ import Foundation
 class Day1: Day {
     
     func run() {
-        let data = FileReader.getStringArray(from: basePath + "Resources/day1_input.txt").toIntArray()
+        let data = readData(filename: "day1_input.txt").toIntArray()
         print("Part1", find2020(data: data)!)
         print("Part2", find2020by3(data: data)!)
     }

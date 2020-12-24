@@ -7,9 +7,17 @@
 
 import Foundation
 
-let basePath = "/Users/simondeutsch/Documents/Campus/ASD/ASD_xMasCodingChallenge/"
+let basePath = "/Users/simondeutsch/Documents/Campus/ASD/ASD_xMasCodingChallenge/Resources/"
 
 protocol Day {
     
     func run()
+    func readData(filename: String) -> [String]
 }
+
+extension Day {
+    func readData(filename: String) -> [String] {
+        return FileReader.getStringArray(from: basePath + filename)
+    }
+}
+

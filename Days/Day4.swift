@@ -11,7 +11,7 @@ typealias Passport = [String: String]
 
 class Day4: Day {
     func run() {
-        let data = FileReader.getStringArray(from: basePath + "Resources/day4_input.txt")
+        let data = readData(filename: "day4_input.txt")
         
         let rawPassportData = dataToPassportData(data: data)
         

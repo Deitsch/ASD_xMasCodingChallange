@@ -11,7 +11,7 @@ typealias SeatMap = [[Int]]
 
 class Day5: Day {
     func run() {
-        let data = FileReader.getStringArray(from: basePath + "Resources/day5_input.txt")
+        let data = readData(filename: "day5_input.txt")
         
         var highestSeatID = 0
         var lowestSeatID = Int.max

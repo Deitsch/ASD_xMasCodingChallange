@@ -56,7 +56,7 @@ class Day3: Day {
     var mapHeight: Int?
     
     func run() {
-        let map = FileReader.getStringArray(from: basePath + "/Resources/day3_input.txt")
+        let data = readData(filename: "day3_input.txt")
         mapWidth = map.first?.count
         mapHeight = map.count
         
