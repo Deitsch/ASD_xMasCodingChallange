@@ -24,15 +24,12 @@ class Day5: Day {
                 lowestSeatID = seatID < lowestSeatID ? seatID : lowestSeatID
             }
         }
-        
         print("Part1", highestSeatID)
         
-        let seatMap = calculateAllPossibleSeatIDs(cols: 8, rows: 128)
         
-        
-        let reducedSeatMap = removeRowsBetween(lowerbound: lowestSeatID, upperbound: highestSeatID, in: seatMap).flatMap { $0 }
-        
-        let possibleSeats = Set(reducedSeatMap).symmetricDifference(Set(seatIDs))
+        let allSeatsMap = calculateAllPossibleSeatIDs(cols: 8, rows: 128)
+        let reducedFlatSeats = removeRowsBetween(lowerbound: lowestSeatID, upperbound: highestSeatID, in: allSeatsMap).flatMap { $0 }
+        let possibleSeats = Set(reducedFlatSeats).symmetricDifference(Set(seatIDs))
         
         possibleSeats.forEach { seatID in
             if seatIDs.contains(seatID + 1) && seatIDs.contains(seatID - 1) {
