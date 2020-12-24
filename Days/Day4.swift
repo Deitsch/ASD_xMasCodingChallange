@@ -15,21 +15,21 @@ class Day4: Day {
         
         let rawPassportData = dataToPassportData(data: data)
         
-        var validPassports = 0
+        var validPassportsP1 = 0
+        var validPassportsP2 = 0
         rawPassportData.forEach { line in
             let passport = rawPassportDataToPassport(line: line)
             
-            if (passport.count == 8 || (passport.count == 7 && passport["cid"] == nil))
-                && additionalCheck(passport: passport) {
-                validPassports+=1
+            if passport.count == 8 || (passport.count == 7 && passport["cid"] == nil) {
+                validPassportsP1+=1
+                if additionalCheck(passport: passport) {
+                    validPassportsP2+=1
+                }
             }
         }
-        print("c", c1 - c2)
-        print(validPassports)
+        print("Part1", validPassportsP1)
+        print("Part2", validPassportsP2)
     }
-    
-    var c1 = 0
-    var c2 = 0
     
     func additionalCheck(passport: Passport) -> Bool {
         guard let byr = Int(passport["byr"]!), byr >= 1920 && byr <= 2002 else {

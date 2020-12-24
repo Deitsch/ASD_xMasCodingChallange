@@ -11,13 +11,22 @@ class Day2: Day {
     func run() {
         let data = FileReader.getStringArray(from: basePath + "Resources/day2_input.txt")
         
-        var correctPWs = 0
+        var correctPWsP1 = 0
         data.forEach { line in
-            if isPasswordValid(line: line, company: .TobogganCorporate) {
-                correctPWs+=1
+            if isPasswordValid(line: line, company: .SledRental) {
+                correctPWsP1+=1
             }
         }
-        print(correctPWs)
+        print(correctPWsP1)
+        
+        var correctPWsP2 = 0
+        data.forEach { line in
+            if isPasswordValid(line: line, company: .TobogganCorporate) {
+                correctPWsP2+=1
+            }
+        }
+        print(correctPWsP2)
+        
     }
 //    1-3 a: abcde
     func isPasswordValid(line: String, company: Company) -> Bool {

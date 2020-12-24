@@ -11,10 +11,11 @@ class Day1: Day {
     
     func run() {
         let data = FileReader.getStringArray(from: basePath + "Resources/day1_input.txt").toIntArray()
-        print(find2020by3(data: data) ?? "fail")
+        print("Part1", find2020(data: data)!)
+        print("Part2", find2020by3(data: data)!)
     }
     
-    func find2020(data: [Int], cnt: String) -> Int? {
+    func find2020(data: [Int]) -> Int? {
         for n1 in data {
             for n2 in data {
                 if  n1 + n2 == 2020 {
