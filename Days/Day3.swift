@@ -56,7 +56,7 @@ class Day3: Day {
     var mapHeight: Int?
     
     func run() {
-        let data = readData(filename: "day3_input.txt")
+        let map = readData(filename: "day3_input.txt")
         mapWidth = map.first?.count
         mapHeight = map.count
         

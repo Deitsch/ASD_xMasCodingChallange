@@ -48,6 +48,7 @@
 		89F69D292594161E003EC38F /* day5_input.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = day5_input.txt; sourceTree = "<group>"; };
 		89F69D2A2594162D003EC38F /* Day5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day5.swift; sourceTree = "<group>"; };
 		89F69D2E2594EB0D003EC38F /* Day6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day6.swift; sourceTree = "<group>"; };
+		89F69D312594ECAF003EC38F /* day6_input.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = day6_input.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +119,7 @@
 				893EF7BA25912B6D00304064 /* day3_input.txt */,
 				89205EE925922C2C0073A0B0 /* day4_input.txt */,
 				89F69D292594161E003EC38F /* day5_input.txt */,
+				89F69D312594ECAF003EC38F /* day6_input.txt */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
