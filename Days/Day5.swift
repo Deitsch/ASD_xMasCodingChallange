@@ -16,6 +16,7 @@ class Day5: Day {
         var highestSeatID = 0
         var lowestSeatID = Int.max
         var seatIDs = [Int]()
+        
         data.forEach{ line in
             if !line.isEmpty {
                 let seatID = calculateSeatID(line: line)
@@ -25,7 +26,6 @@ class Day5: Day {
             }
         }
         print("Part1", highestSeatID)
-        
         
         let allSeatsMap = calculateAllPossibleSeatIDs(cols: 8, rows: 128)
         let reducedFlatSeats = removeRowsBetween(lowerbound: lowestSeatID, upperbound: highestSeatID, in: allSeatsMap).flatMap { $0 }
@@ -65,44 +65,29 @@ class Day5: Day {
         let rowCode = line.replacingOccurrences(of: "R", with: "").replacingOccurrences(of: "L", with: "")
         let colCode = line.replacingOccurrences(of: "F", with: "").replacingOccurrences(of: "B", with: "")
         
+        let row = calculateSeatFrom(code: rowCode, lowerBound: 0, upperBound: 127)
+        let col = calculateSeatFrom(code: colCode, lowerBound: 0, upperBound: 7)
         
-        let row = calculateSeatRow(rowString: rowCode, lowerBound: 0, upperBound: 127)
-        let col = calculateSeatColumn(colString: colCode, lowerBound: 0, upperBound: 7)
-        
-        return calculateSeatId(col: col, row: row)
+        return calculateSeatID(col: col, row: row)
     }
     
-    func calculateSeatId(col: Int, row: Int) -> Int {
+    func calculateSeatID(col: Int, row: Int) -> Int {
         return row * 8 + col
     }
     
-    // calcSeat and calcRow are almost the same -> could be 1 function with bounderies identifier
-    func calculateSeatRow(rowString: String, lowerBound: Int, upperBound: Int) -> Int {
+    func calculateSeatFrom(code: String, lowerBound: Int, upperBound: Int) -> Int {
+        let checkChar = (code.contains("L") ? "L" : "F").first
         if abs(upperBound - lowerBound) == 1 {
-            return rowString.first == "F" ? lowerBound : upperBound
+            return code.first == checkChar ? lowerBound : upperBound
         }
         
         let half: Int = (upperBound - lowerBound) / 2 + lowerBound
         
-        let newLowerBound = rowString.first == "F" ? lowerBound : half + 1
-        let newUpperBound = rowString.first == "F" ? half : upperBound
-        let newRowString = String(rowString.dropFirst())
+        let newLowerBound = code.first == checkChar ? lowerBound : half + 1
+        let newUpperBound = code.first == checkChar ? half : upperBound
+        let newCode = String(code.dropFirst())
         
-        return calculateSeatRow(rowString: newRowString, lowerBound: newLowerBound, upperBound: newUpperBound)
-    }
-    
-    func calculateSeatColumn(colString: String, lowerBound: Int, upperBound: Int) -> Int {
-        if abs(upperBound - lowerBound) == 1 {
-            return colString.first == "L" ? lowerBound : upperBound
-        }
-        
-        let half: Int = (upperBound - lowerBound) / 2 + lowerBound
-        
-        let newLowerBound = colString.first == "L" ? lowerBound : half + 1
-        let newUpperBound = colString.first == "L" ? half : upperBound
-        let newColString = String(colString.dropFirst())
-        
-        return calculateSeatColumn(colString: newColString, lowerBound: newLowerBound, upperBound: newUpperBound)
+        return calculateSeatFrom(code: newCode, lowerBound: newLowerBound, upperBound: newUpperBound)
     }
     
     func calculateAllPossibleSeatIDs(cols: Int, rows: Int) -> SeatMap{
@@ -111,7 +96,7 @@ class Day5: Day {
         for row in 0..<rows {
             seatMap.append([Int]())
             for col in 0..<cols {
-                seatMap[row].append(calculateSeatId(col: col, row: row))
+                seatMap[row].append(calculateSeatID(col: col, row: row))
             }
         }
         return seatMap
