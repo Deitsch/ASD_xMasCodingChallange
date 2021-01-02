@@ -43,3 +43,29 @@ extension StringProtocol {
         return result
     }
 }
+
+extension String {
+    func firstIndex(of: String) -> Int {
+        if let range: Range<String.Index> = self.range(of: of) {
+            let index: Int = self.distance(from: self.startIndex, to: range.lowerBound)
+            return index
+        }
+        else {
+            return -1
+        }
+    }
+
+    func substring(upTo: String) -> String {
+        return String(self.prefix(self.firstIndex(of: upTo)))
+    }
+    
+    func substring(fromExcluded: String) -> String {
+        let offset = self.firstIndex(of: fromExcluded) + fromExcluded.count
+        let fromIndex = self.index(startIndex, offsetBy: offset)
+        return String(self[fromIndex...])
+    }
+    
+    func removeTrailingCharacter(trailingChar: Character) -> String {
+        return self.last! == trailingChar ? String(self.dropLast()) : self
+    }
+}
