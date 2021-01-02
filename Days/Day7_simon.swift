@@ -28,12 +28,12 @@ class Bag: Equatable {
         }
     }
     
-    func containsBagWith(adjective: String, color: String) -> Bool {
-        if self.adjective == adjective && self.color == color {
+    func contains(bag: Bag) -> Bool {
+        if self == bag {
             return true
         }
-        for bag in bags {
-            if bag.containsBagWith(adjective: adjective, color: color) {
+        for insideBag in bags {
+            if insideBag.contains(bag: bag) {
                 return true
             }
         }
@@ -52,17 +52,17 @@ class Day7_simon: Day {
         
 //        let bags = data.map{ readLineToBag(line: $0) }
         var bags = [Bag]()
-        var lineCnt = 0
         data.forEach { line in
             let newBag = readLineToBag(line: line)
             bags.forEach{ newBag.updateBag(with: $0 )}
             bags.forEach{ $0.updateBag(with: newBag )}
             bags.append(newBag)
-            lineCnt+=1
-            print(lineCnt)
         }
         
-        let part1 = bags.filter{ !$0.containsBagWith(adjective: "shiny", color: "gold") }.count
+        let searchBag = Bag(adjective: "shiny", color: "gold")
+        let part1 = bags
+            .filter { $0 != searchBag }
+            .filter { $0.contains(bag: searchBag) }.count
         print("Part1", part1)
     }
     
