@@ -46,7 +46,7 @@ class Bag: Equatable {
 }
 
 
-class Day7: Day {
+class Day7_simon: Day {
     func run() {
         let data = readData(filename: "day7_input.txt").filter{ !$0.isEmpty }
         
@@ -79,18 +79,12 @@ class Day7: Day {
             .replacingOccurrences(of: "bag", with: "")
             .split(separator: ",")
             .map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
-            .flatMap { line -> [Bag] in
+            .compactMap { line in
                 let split = line.split(separator: " ")
-                let bagCount = Int(split[0])!
                 let bagAdjective = String(split[1])
                 let bagColor = String(split[2])
                 
-                var bags = [Bag]()
-                for _ in 0..<bagCount {
-                    let insideBag = Bag(adjective: bagAdjective, color: bagColor, bags: [])
-                    bags.append(insideBag)
-                }
-                return bags
+                return Bag(adjective: bagAdjective, color: bagColor, bags: [])
             }
         return bag
     }

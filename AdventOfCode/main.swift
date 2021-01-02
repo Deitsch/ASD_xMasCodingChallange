@@ -7,5 +7,9 @@
 
 import Foundation
 
-let day = Day7()
+
+let dayJ = Day7()
+dayJ.run()
+
+let day = Day7_simon()
 day.run()
